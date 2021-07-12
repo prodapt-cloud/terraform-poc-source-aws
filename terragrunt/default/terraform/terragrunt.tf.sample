@@ -1,0 +1,9 @@
+module "tf-terragrunt" {
+  source = "module-terragrunt"
+
+  # env - type: string
+  # env = "[PLACEHOLDER]"
+
+  # project - type: string
+  # project = "[PLACEHOLDER]"
+}
