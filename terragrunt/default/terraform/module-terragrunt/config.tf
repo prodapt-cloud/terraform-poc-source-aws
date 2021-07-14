@@ -13,6 +13,8 @@
 }
 
 "resource" "aws_ami" "webserver" {
+  "name" = "webserver"
+
   "tags" = {
     "cycloid.io" = "true"
 
@@ -20,7 +22,11 @@
   }
 }
 
-"resource" "aws_ec2_availability_zone_group" "webavailabiltygroup" {}
+"resource" "aws_ec2_availability_zone_group" "webavailabiltygroup" {
+  "count" = 3
+
+  "group_name" = "webservergroup"
+}
 
 "resource" "aws_elb" "web-loadbalancer" {
   "tags" = {
